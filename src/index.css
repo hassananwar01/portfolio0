@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-size: 14px; /* Base size for mobile */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (min-width: 640px) {
+    html {
+      font-size: 15px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      font-size: 16px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    html {
+      font-size: 18px;
+    }
+  }
+
+  body {
+    @apply text-gray-900 antialiased;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-12 sm:py-16 md:py-20 lg:py-24;
+  }
+
+  .section-title {
+    @apply text-2xl xs:text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-base xs:text-lg text-gray-600 text-center max-w-2xl mx-auto mb-8;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg overflow-hidden;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .button-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full 
+           bg-blue-600 text-white font-medium hover:bg-blue-700 
+           transition-all duration-200 text-sm sm:text-base
+           w-full xs:w-auto;
+  }
+
+  .button-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full 
+           bg-white text-blue-600 font-medium border-2 border-blue-600 
+           hover:bg-blue-50 hover:border-blue-700 hover:text-blue-700 
+           transition-all duration-200 text-sm sm:text-base
+           w-full xs:w-auto;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2 rounded-lg border border-gray-300 
+           focus:ring-2 focus:ring-blue-500 focus:border-transparent
+           text-base;
+  }
+}
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: linear-gradient(to right, #e5e7eb 1px, transparent 1px),
+      linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .center-absolute {
+    @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+
+  .center-flex {
+    @apply flex items-center justify-center;
+  }
+
+  .responsive-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+
+  .responsive-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Container responsiveness */
+.container {
+  @apply w-full mx-auto px-4 sm:px-6 lg:px-8;
+  max-width: 100%;
+}
+
+@screen xs {
+  .container {
+    max-width: 475px;
+  }
+}
+
+@screen sm {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@screen md {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@screen lg {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@screen xl {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@screen 2xl {
+  .container {
+    max-width: 1536px;
+  }
+}
